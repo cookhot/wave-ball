@@ -41,6 +41,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# 生成文件
+lib/
+
 # TypeScript v1 declaration files
 typings/
 
