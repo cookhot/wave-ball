@@ -3,17 +3,17 @@ import { attachClassName } from './utils';
 import Wave from './wave';
 
 // 唯一节点Id
-const BaseKSWaveBallId = 'ks-wave-ball';
+const BaseWBWaveBallId = 'wb-wave-ball';
 
 // 判断页面是否存在水波球元素，防止有相似id的元素
-const findKSWaveBallEl = (index) => {
-  const elId = `${BaseKSWaveBallId}_${index}`;
+const findWBWaveBallEl = (index) => {
+  const elId = `${BaseWBWaveBallId}_${index}`;
   const el = document.getElementById(elId);
   if (!el) {
     return index;
   }
-  if (!el.$$KSWaveBall) {
-    return findKSWaveBallEl(index + 1);
+  if (!el.$$WBWaveBall) {
+    return findWBWaveBallEl(index + 1);
   }
 
   return index;
@@ -27,19 +27,19 @@ const defaultOptions = {
 };
 
 // 初始化 水波球 
-export class KSWaveBall {
+export class WBWaveBall {
   constructor(options) {
-    const idIndex = findKSWaveBallEl(0);
+    const idIndex = findWBWaveBallEl(0);
     
     const el = document.createElement('div');
 
-    el.setAttribute('id', `${BaseKSWaveBallId}_${idIndex}`);
+    el.setAttribute('id', `${BaseWBWaveBallId}_${idIndex}`);
     // 如果原来组件存在，销毁原来水波球 
-    if (el.$$KSWaveBall) {
-      el.$$KSWaveBall.destroy();
+    if (el.$$WBWaveBall) {
+      el.$$WBWaveBall.destroy();
     }
 
-    el.$$KSWaveBall = this;
+    el.$$WBWaveBall = this;
     this.el = el;
 
     const canvas = document.createElement('canvas');
@@ -50,7 +50,7 @@ export class KSWaveBall {
     // 额外信息
     const otherDiv = document.createElement('div');
     this.otherDiv = otherDiv;
-    this.otherDiv.setAttribute('id', `${BaseKSWaveBallId}-other_${idIndex}`);
+    this.otherDiv.setAttribute('id', `${BaseWBWaveBallId}-other_${idIndex}`);
     this.el.appendChild(otherDiv);
     
     this.options = Object.assign({}, defaultOptions, options);

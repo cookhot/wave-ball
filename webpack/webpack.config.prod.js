@@ -10,7 +10,7 @@ module.exports = merge(common, {
   bail: true,
   output: {
     path: Path.join(__dirname, '../lib'),
-    library: 'KSWaveBall',
+    library: 'WBWaveBall',
     libraryTarget: 'umd',
     filename: 'index.js',
   },
