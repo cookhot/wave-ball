@@ -1,6 +1,6 @@
 {
   "name": "wave-ball",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "通用水波球",
   "main": "lib/index.js",
   "files": ["lib", "src", "README.md"],
