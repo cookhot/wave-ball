@@ -27,7 +27,7 @@ const defaultOptions = {
 };
 
 // 初始化 水波球 
-class WBWaveBall {
+export default class WBWaveBall {
   constructor(options) {
     const idIndex = findWBWaveBallEl(0);
     
@@ -99,4 +99,4 @@ class WBWaveBall {
   }
 }
 
-export { Wave, WBWaveBall };
+export { Wave };
