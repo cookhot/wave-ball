@@ -1,11 +1,11 @@
 const { sin, cos, sqrt, pow, PI, round } = Math;
 
 const defaultOptions = {
-  width: 80,
-  height: 80,
+  width: 68,
+  height: 68,
   lineWidth: 1,
-  radiusColor: '#09ba08',
-  color: '#1c86d1',
+  radiusColor: '#e8e8e8',
+  color: '#4bd64b',
   range: 0,
   padding: 0,
   margin: 1,
@@ -131,7 +131,7 @@ class Wave {
     const { cx, cy, innerRadius, ctx } = this;
     ctx.globalCompositeOperation = 'source-over';
 
-    const size = 0.45 * innerRadius;
+    const size = 0.5 * innerRadius;
     ctx.font = 'bold ' + size + 'px Microsoft Yahei';
     let _range = range;
     let figure = 0;
@@ -142,7 +142,7 @@ class Wave {
     const txt = (_range.toFixed(2) * Math.pow(10, figure)).toFixed(0) + '%';
     
     const fonty = cy + size / 4;
-    const fontx = cx - size * (.35 * (figure + 1.25));
+    const fontx = cx - size * (.35 * (figure + 1.45));
     ctx.fillStyle = "#000";
     ctx.fillText(txt, fontx, fonty);
   }

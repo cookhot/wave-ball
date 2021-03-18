@@ -5,12 +5,11 @@
   "main": "lib/index.js",
   "files": [
     "lib",
-    "src",
-    "README.md"
+    "src"
   ],
   "scripts": {
     "build": "rollup -c",
-    "dev": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js"
+    "dev": "rollup -c -w"
   },
   "repository": {
     "type": "git",
